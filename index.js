@@ -23,6 +23,10 @@ async function run() {
       )}:${encodeURIComponent(awsCcPassword)}@${awsRepoUrl}" ${repoDir}`
     );
 
+    await exec.exec(`git co -B ${awsCcBranchname}`, [], {
+      cwd: repoDir,
+    });
+
     core.info("Downloading release");
 
     await exec.exec(
