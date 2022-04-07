@@ -4,15 +4,12 @@ inputs:
   repository_name:
     description: "Github repository name"
     default: ${{ github.event.repository.name }}
-    required: true
   tag_name:
     description: "Github tag name"
     default: ${{ github.event.release.tag_name }}
-    required: true
   tarball_url:
     description: "Release tarball URL"
     default: ${{ github.event.release.tarball_url }}
-    required: true
   aws_repo_url:
     description: "AWS CC repo URL (HTTPS URL; do not include https:// prefix)"
     required: true

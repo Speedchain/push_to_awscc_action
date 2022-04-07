@@ -2972,7 +2972,7 @@ const exec = __nccwpck_require__(514);
 
 async function run() {
   try {
-    const respositoryName = core.getInput("respository_name");
+    const repositoryName = core.getInput("repository_name");
     const tagName = core.getInput("tag_name");
     const tarballUrl = core.getInput("tarball_url");
     const awsRepoUrl = core.getInput("aws_repo_url");
@@ -2982,7 +2982,7 @@ async function run() {
     const githubToken = core.getInput("github_token");
 
     const repoDir = "deploy_repo";
-    const archiveName = `${respositoryName}-${tag_name}`;
+    const archiveName = `${repositoryName}-${tagName}`;
 
     core.info("Cloning AWS CC repo");
 
