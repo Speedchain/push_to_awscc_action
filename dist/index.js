@@ -2992,7 +2992,7 @@ async function run() {
       )}:${encodeURIComponent(awsCcPassword)}@${awsRepoUrl}" ${repoDir}`
     );
 
-    await exec.exec(`git co -B ${awsCcBranchname}`, [], {
+    await exec.exec(`git checkout -B ${awsCcBranchname}`, [], {
       cwd: repoDir,
     });
 
