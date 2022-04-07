@@ -26,7 +26,7 @@ async function run() {
     core.info("Downloading release");
 
     await exec.exec(
-      `curl -H "Authorization: token ${githubToken}" -sL "${tarballUrl}" > ${archiveName}.tar.gz`
+      `curl -H "Authorization: token ${githubToken}" -sL "${tarballUrl}" -o ${archiveName}.tar.gz`
     );
 
     core.info("Unpacking release");
