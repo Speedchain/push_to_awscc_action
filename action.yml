@@ -18,18 +18,15 @@ inputs:
     required: true
   aws_cc_username:
     description: "AWS CC HTTPS username"
-    default: ${{ secrets.AWS_CC_USERNAME }}
     required: true
   aws_cc_password:
     description: "AWS CC HTTPS password"
-    default: ${{ secrets.AWS_CC_PASSWORD }}
     required: true
   aws_cc_branchname:
     description: "AWS CC branch name"
     required: true
   github_token:
     description: "Github access token"
-    default: ${{ secrets.GITHUB_TOKEN }}
     required: true
 runs:
   using: "node16"
