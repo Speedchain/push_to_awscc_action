@@ -18,7 +18,7 @@ async function run() {
     core.info("Cloning AWS CC repo");
 
     await exec.exec(
-      `git clone https://${uriEncode(awsCcUsername)}:${uriEncode(
+      `git clone https://${encodeURI(awsCcUsername)}:${encodeURI(
         awsCcPassword
       )}@${awsRepoUrl} ${repoDir}`
     );
