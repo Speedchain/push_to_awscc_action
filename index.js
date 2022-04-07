@@ -37,17 +37,19 @@ async function run() {
 
     core.info("Configuring AWS CC repo");
 
-    await exec.exec("bash", [
-      "-c",
-      `"cd ${repoDir} && git config user.email 'deployer@speedchain.com' && git config user.name 'Deployer'"`,
-    ]);
+    await exec.exec(
+      "git config user.email 'deployer@speedchain.com' && git config user.name 'Deployer'",
+      [],
+      { cwd: repoDir }
+    );
 
     core.info("Committing changes to AWS CC repo");
 
-    await exec.exec("bash", [
-      "-c",
-      `"cd ${repoDir} && git add . && git commit -m '${tagName}' && git push origin ${awsCcBranchname}"`,
-    ]);
+    await exec.exec(
+      "git add . && git commit -m '${tagName}' && git push origin ${awsCcBranchname}",
+      [],
+      { cwd: repoDir }
+    );
   } catch (error) {
     core.setFailed(error.message);
   }
