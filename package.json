@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "lint": "eslint ./src",
-    "lint:fix": "eslint --fix ./src"
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,13 @@
     "husky": "^7.0.4",
     "prettier": "^2.6.2"
   },
-  "eslint": {
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "env": {
+      "es6": true
+    },
     "plugins": [
       "prettier"
     ],
