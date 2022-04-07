@@ -1,7 +1,7 @@
 name: "Push Release to AWS CC"
 description: "Push a tagged release to AWS CC repo as a single commit"
 inputs:
-  respository_name:
+  repository_name:
     description: "Github repository name"
     default: ${{ github.event.repository.name }}
     required: true
