@@ -1,0 +1,48 @@
+{
+  "name": "push_to_awscc_action",
+  "version": "1.0.0",
+  "description": "Github action to push tagged release to AWS CC repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Speedchain/push_to_awscc_action.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Speedchain/push_to_awscc_action/issues"
+  },
+  "homepage": "https://github.com/Speedchain/push_to_awscc_action#readme",
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.2"
+  },
+  "eslint": {
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "extends": [
+      "prettier"
+    ]
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
+  }
+}
