@@ -49,7 +49,9 @@ async function run() {
 
     await exec.exec(`git commit -m '${tagName}'`, [], { cwd: repoDir });
 
-    await exec.exec(`git push origin ${awsCcBranchname}`, [], { cwd: repoDir });
+    await exec.exec(`git push -u origin ${awsCcBranchname}`, [], {
+      cwd: repoDir,
+    });
   } catch (error) {
     core.setFailed(error.message);
   }
