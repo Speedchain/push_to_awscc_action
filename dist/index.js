@@ -3008,14 +3008,14 @@ async function run() {
 
     await exec.exec("bash", [
       "-c",
-      `cd ${repoDir} && git config user.email "deployer@speedchain.com" && git config user.name "Deployer"`,
+      `"cd ${repoDir} && git config user.email 'deployer@speedchain.com' && git config user.name 'Deployer'"`,
     ]);
 
     core.info("Committing changes to AWS CC repo");
 
     await exec.exec("bash", [
       "-c",
-      `cd ${repoDir} && git add . && git commit -m "${tagName}" && git push origin ${awsCcBranchname}`,
+      `"cd ${repoDir} && git add . && git commit -m '${tagName}' && git push origin ${awsCcBranchname}"`,
     ]);
   } catch (error) {
     core.setFailed(error.message);
