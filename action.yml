@@ -9,7 +9,7 @@ inputs:
     default: ${{ github.event.release.tag_name }}
   prerelease:
     description: "Github prerelease flag"
-    default: ${{ giuthub.event.release.prerelease }}
+    default: ${{ github.event.release.prerelease }}
   author:
     description: "Github login of release author"
     default: ${{ github.event.release.author.login }}
