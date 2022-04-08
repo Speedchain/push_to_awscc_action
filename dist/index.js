@@ -2984,7 +2984,10 @@ async function run() {
     awsRepoUrl.username = core.getInput("aws_cc_username");
     awsRepoUrl.password = core.getInput("aws_cc_password");
 
-    const awsCcBranchname = isPrerelease ? "staging" : "master";
+    const mainBranchName = core.getInput("main_branch_name");
+    const stagingBranchName = core.getInput("staging_branch_name");
+
+    const awsCcBranchname = isPrerelease ? stagingBranchName : mainBranchName;
 
     const repoDir = "deploy_repo";
     const archiveName = `${repositoryName}-${tagName}`;

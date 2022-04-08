@@ -31,6 +31,12 @@ inputs:
   github_token:
     description: "Github access token"
     required: true
+  main_branch_name:
+    description: "AWS CC main branch name"
+    default: main
+  staging_branch_name:
+    description: "AWS CC staging branch name"
+    default: staging
 runs:
   using: "node16"
   main: "dist/index.js"
