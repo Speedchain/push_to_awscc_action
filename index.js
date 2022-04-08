@@ -7,6 +7,7 @@ async function run() {
     const tagName = core.getInput("tag_name");
     const isPrerelease = core.getInput("prerelease") === "true";
     const author = core.getInput("author");
+    const message = core.getInput("message");
     const tarballUrl = core.getInput("tarball_url");
     const githubToken = core.getInput("github_token");
 
@@ -18,7 +19,7 @@ async function run() {
 
     const repoDir = "deploy_repo";
     const archiveName = `${repositoryName}-${tagName}`;
-    const releaseMessage = `Release ${tagName} by ${author}`;
+    const releaseMessage = `Release ${tagName} by ${author}\n\n${message}`;
 
     core.info("Cloning AWS CC repo");
 

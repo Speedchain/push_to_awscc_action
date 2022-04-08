@@ -13,6 +13,9 @@ inputs:
   author:
     description: "Github login of release author"
     default: ${{ github.event.release.author.login }}
+  message:
+    description: "Github release description"
+    default: ${{ github.event.release.body }}
   tarball_url:
     description: "Release tarball URL"
     default: ${{ github.event.release.tarball_url }}
