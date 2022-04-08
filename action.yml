@@ -11,7 +11,7 @@ inputs:
     description: "Release tarball URL"
     default: ${{ github.event.release.tarball_url }}
   aws_repo_url:
-    description: "AWS CC repo URL (HTTPS URL; do not include https:// prefix)"
+    description: "AWS CC repo URL (HTTPS)"
     required: true
   aws_cc_username:
     description: "AWS CC HTTPS username"
