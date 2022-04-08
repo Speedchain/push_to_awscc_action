@@ -7,6 +7,12 @@ inputs:
   tag_name:
     description: "Github tag name"
     default: ${{ github.event.release.tag_name }}
+  prerelease:
+    description: "Github prerelease flag"
+    default: ${{ giuthub.event.release.prerelease }}
+  author:
+    description: "Github login of release author"
+    default: ${{ github.event.release.author.login }}
   tarball_url:
     description: "Release tarball URL"
     default: ${{ github.event.release.tarball_url }}
@@ -18,9 +24,6 @@ inputs:
     required: true
   aws_cc_password:
     description: "AWS CC HTTPS password"
-    required: true
-  aws_cc_branchname:
-    description: "AWS CC branch name"
     required: true
   github_token:
     description: "Github access token"
