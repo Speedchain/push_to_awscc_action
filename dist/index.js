@@ -2989,7 +2989,7 @@ async function run() {
 
     await exec.exec("git", ["clone", awsRepoUrl.toString(), repoDir]);
 
-    await exec.exec("git", ["checkout", "-b", awsCcBranchname], {
+    await exec.exec("git", ["checkout", awsCcBranchname], {
       cwd: repoDir,
     });
 
