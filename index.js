@@ -5,7 +5,7 @@ async function run() {
   try {
     const repositoryName = core.getInput("repository_name");
     const tagName = core.getInput("tag_name");
-    const isPrerelease = core.getInput("prerelease");
+    const isPrerelease = core.getInput("prerelease") === "true";
     const author = core.getInput("author");
     const tarballUrl = core.getInput("tarball_url");
     const githubToken = core.getInput("github_token");
