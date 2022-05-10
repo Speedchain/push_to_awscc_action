@@ -3001,6 +3001,12 @@ async function run() {
       cwd: repoDir,
     });
 
+    core.info("Marking old files for deletion");
+
+    await exec.exec("git", ["rm", "-rf", "."], {
+      cwd: repoDir,
+    });
+
     core.info("Downloading release");
 
     await exec.exec("curl", [
